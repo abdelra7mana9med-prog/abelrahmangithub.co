@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>إلى أمي 🤍</title>
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:tahoma;
+    background:linear-gradient(180deg,#001a1a,#003333);
+    overflow:hidden;
+    color:white;
+    text-align:center;
+}
+.card{
+    width:340px;
+    padding:30px;
+    border-radius:25px;
+    background:rgba(255,255,255,0.07);
+    box-shadow:0 0 40px rgba(0,0,0,.6);
+    animation:fade 2s ease;
+}
+h1{
+    font-size:28px;
+}
+p{
+    line-height:1.9;
+    margin-top:15px;
+    font-size:18px;
+}
+@keyframes fade{
+    from{transform:scale(.8);opacity:0}
+    to{transform:scale(1);opacity:1}
+}
+.heart{
+    position:fixed;
+    bottom:-20px;
+    font-size:20px;
+    animation:up 6s linear forwards;
+}
+@keyframes up{
+    to{transform:translateY(-110vh);opacity:0}
+}
+</style>
+</head>
+<body>
+<div class="card">
+    <h1>إلى أمي 🤍</h1>
+    <p>
+    يا أمي…  
+    مهما كبرت هفضل الطفل اللي بيطمن بصوتك  
+    ومهما الدنيا تتعبني  
+    وجودك هو الأمان الوحيد في حياتي  
+    ربنا يشفيكي ويقومك ليا بألف سلامة 🤍
+    </p>
+</div>
+<script>
+// قلوب متحركة
+setInterval(()=>{
+let h=document.createElement("div");
+h.innerHTML="🤍";
+h.className="heart";
+h.style.left=Math.random()*100+"vw";
+h.style.fontSize=(18+Math.random()*25)+"px";
+document.body.appendChild(h);
+setTimeout(()=>h.remove(),6000);
+},500);
+
+// موسيقى (اختياري)
+window.onload=()=>{
+let audio=new Audio("love.mp3"); // لو هتحط ملف موسيقى بنفس اسم love.mp3
+audio.volume=0.4;
+audio.play().catch(()=>{});
+}
+</script>
+</body>
+</html>
